@@ -1,0 +1,642 @@
+/* Hexpath for Zen Browser: userContent.css (built-in about: pages) */
+
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-color: #E6E6E6 !important;
+    --in-content-page-background: #191919 !important;
+    --color-accent-primary: #DA752B !important;
+    --color-accent-primary-hover: #E8934F !important;
+    --color-accent-primary-active: #B35F20 !important;
+    background-color: #191919 !important;
+  }
+}
+
+@-moz-document url("about:newtab"), url("about:home") {
+  :root {
+    --newtab-background-color: #191919 !important;
+    --newtab-background-color-secondary: #222222 !important;
+    --newtab-element-hover-color: #2A2A2A !important;
+    --newtab-text-primary-color: #E6E6E6 !important;
+    --newtab-wordmark-color: #E6E6E6 !important;
+    --newtab-primary-action-background: #DA752B !important;
+  }
+
+  .icon {
+    color: #DA752B !important;
+  }
+
+  .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+    color: #E8934F !important;
+  }
+
+  .top-site-outer .search-topsite {
+    background-color: #5ABAED !important;
+  }
+}
+
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --zen-colors-tertiary: #121212 !important;
+    --zen-colors-primary: #121212 !important;
+    --zen-colors-border: #2A2A2A !important;
+    --zen-primary-color: #DA752B !important;
+    --in-content-page-background: #121212 !important;
+    --in-content-box-background: #121212 !important;
+    --in-content-text-color: #E6E6E6 !important;
+    --in-content-border-color: #2A2A2A !important;
+    --link-color: #5ABAED !important;
+    --link-color-hover: #8ACEF3 !important;
+    background-color: #121212 !important;
+  }
+
+  /* ---- Left: category list, text only, no button fills ---- */
+  .navigation,
+  #categories {
+    background: #121212 !important;
+    border-color: #2A2A2A !important;
+  }
+
+  #categories>*,
+  #categories .category,
+  .navigation .category {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+  }
+
+  #categories>*:hover .category-name,
+  #categories .category:hover .category-name {
+    color: #FFFFFF !important;
+  }
+
+  #categories>*[selected],
+  #categories .category[selected] {
+    color: #DA752B !important;
+    background: transparent !important;
+  }
+
+  #categories>*[selected] .category-name,
+  #categories .category[selected] .category-name {
+    color: #DA752B !important;
+  }
+
+  /* ---- Right: one solid background for everything ---- */
+  .main-content,
+  .pane-container,
+  #mainPrefPane,
+  .sticky-container,
+  .search-container,
+  .subcategory,
+  groupbox,
+  moz-card,
+  .card {
+    background: #121212 !important;
+    background-color: #121212 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  groupbox,
+  moz-card,
+  .card {
+    border: none !important;
+  }
+
+  /* Search field: no outer square frame, only the rounded field border */
+  #searchInput,
+  search-textbox,
+  moz-input-search,
+  .sticky-inner-container {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Colours used inside the field (custom properties reach into it) */
+  #searchInput,
+  search-textbox,
+  moz-input-search {
+    --input-text-background-color: #121212 !important;
+    --input-background-color: #121212 !important;
+    --input-text-border-color: #333333 !important;
+    --border-color-interactive: #333333 !important;
+    --border-color-interactive-hover: #444444 !important;
+    --focus-outline-color: #DA752B !important;
+    --focus-outline: 1px solid #DA752B !important;
+  }
+
+  moz-input-search::part(input) {
+    background-color: #121212 !important;
+    border-color: #333333 !important;
+  }
+
+  /* Real buttons and drop-downs inside the settings */
+  .main-content button,
+  .main-content menulist {
+    background: #1D1D1D !important;
+    color: #E6E6E6 !important;
+    border: 1px solid #333333 !important;
+  }
+
+  .main-content button:hover,
+  .main-content menulist:hover {
+    border-color: #DA752B !important;
+  }
+}
+
+/* ---- Fix-ups: Firefox design tokens + stubborn selected category ---- */
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    /* Newer Firefox tokens (default #1C1B22 came from these) */
+    --background-color-canvas: #121212 !important;
+    --background-color-box: #121212 !important;
+    --background-color-box-info: #121212 !important;
+    --input-background-color: #121212 !important;
+    --in-content-box-info-background: #121212 !important;
+  }
+
+  /* Sticky header behind "Find in Settings" */
+  .sticky-container,
+  .sticky-inner-container,
+  #searchInput,
+  search-textbox,
+  #searchInput input,
+  search-textbox input {
+    background: #121212 !important;
+    background-color: #121212 !important;
+  }
+
+  /* Selected category: no tinted fill, keep only orange text + bar */
+  html #categories>richlistitem.category,
+  html #categories>richlistitem.category:hover,
+  html #categories>richlistitem.category[selected],
+  html #categories>richlistitem.category[selected]:hover,
+  html #categories>richlistitem.category>*,
+  html #categories>richlistitem.category::before,
+  html #categories>richlistitem.category::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+}
+
+/* ---- Zen Mods row: [Visit Store] left, other buttons right ----
+   Markup (Zen source): #zenMarketplaceGroup > hbox.indent >
+     a#zenThemeMarketplaceLink, button#zenThemeMarketplaceImport,
+     button#zenThemeMarketplaceExport, button#zenThemeMarketplaceCheckForUpdates */
+@-moz-document url-prefix("about:preferences") {
+  #zenMarketplaceGroup>hbox.indent {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-inline-start: 0 !important;
+    padding-inline-start: 0 !important;
+    margin-block: 8px !important;
+  }
+
+  #zenThemeMarketplaceLink,
+  #zenThemeMarketplaceImport,
+  #zenThemeMarketplaceExport,
+  #zenThemeMarketplaceCheckForUpdates {
+    box-sizing: border-box !important;
+    min-height: 32px !important;
+    margin: 0 !important;
+    padding: 4px 16px !important;
+    border-radius: 6px !important;
+    background: #1D1D1D !important;
+    border: 1px solid #333333 !important;
+    color: #E6E6E6 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Visit Store: link dressed as a button, pushes the rest to the right */
+  #zenThemeMarketplaceLink {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-inline-end: auto !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+  }
+
+  #zenThemeMarketplaceLink:hover,
+  #zenThemeMarketplaceImport:hover,
+  #zenThemeMarketplaceExport:hover,
+  #zenThemeMarketplaceCheckForUpdates:hover {
+    border-color: #DA752B !important;
+    color: #E6E6E6 !important;
+    text-decoration: none !important;
+  }
+
+  #zenThemeMarketplaceLink:focus-visible {
+    outline: 1px solid #DA752B !important;
+    outline-offset: 1px !important;
+  }
+}
+
+@-moz-document url-prefix("about:addons") {
+
+  /* ---- One solid background everywhere ---- */
+  :root {
+    --zen-dark-color-mix-base: #121212 !important;
+    --zen-colors-tertiary: #121212 !important;
+    --zen-colors-primary: #121212 !important;
+    --zen-colors-border: #2A2A2A !important;
+    --background-color-canvas: #121212 !important;
+    --background-color-box: #121212 !important;
+    --in-content-page-background: #121212 !important;
+    --in-content-box-background: #121212 !important;
+    --in-content-border-color: #2A2A2A !important;
+    --border-color: #2A2A2A !important;
+    --border-color-deemphasized: #2A2A2A !important;
+    --card-outline-color: #2A2A2A !important;
+    --input-background-color: #121212 !important;
+    --input-text-background-color: #121212 !important;
+    --input-text-border-color: #333333 !important;
+    --border-color-interactive: #333333 !important;
+    --focus-outline-color: #DA752B !important;
+
+    /* Toggles: orange when on, grey when off */
+    --toggle-background-color: #2A2A2A !important;
+    --toggle-background-color-hover: #333333 !important;
+    --toggle-border-color: #444444 !important;
+    --toggle-dot-background-color: #8C8C8C !important;
+    --toggle-background-color-pressed: #DA752B !important;
+    --toggle-background-color-pressed-hover: #E8934F !important;
+    --toggle-background-color-pressed-active: #B35F20 !important;
+    --toggle-dot-background-color-on-pressed: #121212 !important;
+    background-color: #121212 !important;
+  }
+
+  body,
+  #main,
+  #sidebar,
+  .navigation,
+  categories-box,
+  #categories,
+  addon-page-header,
+  #page-header,
+  .main-heading,
+  .main-search,
+  .sticky-container,
+  .header-name {
+    background: #121212 !important;
+    background-color: #121212 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  #sidebar,
+  .navigation,
+  categories-box {
+    border-color: #2A2A2A !important;
+  }
+
+  /* ---- Left: categories as plain text, selected = orange text + bar ---- */
+  #categories .category,
+  categories-box .category,
+  .sidebar-footer-button,
+  .sidebar-footer-link,
+  #categories .category::before,
+  #categories .category::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  #categories .category:hover,
+  .sidebar-footer-button:hover,
+  .sidebar-footer-link:hover {
+    color: #FFFFFF !important;
+  }
+
+  #categories .category[selected],
+  #categories .category[selected] .category-name {
+    color: #DA752B !important;
+  }
+
+  /* ---- Search field: rounded border only ---- */
+  search-textbox,
+  .main-search search-textbox,
+  .main-search input {
+    background: #121212 !important;
+    background-color: #121212 !important;
+    border-color: #333333 !important;
+    box-shadow: none !important;
+  }
+
+  search-textbox:focus-within {
+    border-color: #DA752B !important;
+  }
+
+  /* ---- Buttons (gear menu, "…" menus) ----
+     These are <moz-button> components: the rounded button is drawn inside
+     the component, so we only set its colour variables (never a border on
+     the outer element, which is what drew the square). */
+  moz-button.more-options-button {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+    --button-background-color: #1D1D1D !important;
+    --button-background-color-hover: #1D1D1D !important;
+    --button-background-color-active: #1D1D1D !important;
+    --button-background-color-selected: #1D1D1D !important;
+    --button-border-color: #333333 !important;
+    --button-border-color-hover: #DA752B !important;
+    --button-border-color-active: #DA752B !important;
+    --button-border-color-selected: #DA752B !important;
+    --button-text-color: #C8C8C8 !important;
+    --button-text-color-hover: #E6E6E6 !important;
+    --icon-color: #C8C8C8 !important;
+    --focus-outline-color: #DA752B !important;
+  }
+
+  /* "…" on each card: invisible until hovered */
+  moz-button.more-options-button[type="ghost"] {
+    --button-background-color: transparent !important;
+    --button-background-color-hover: transparent !important;
+    --button-background-color-active: transparent !important;
+    --button-background-color-ghost: transparent !important;
+    --button-background-color-ghost-hover: transparent !important;
+    --button-background-color-ghost-active: transparent !important;
+    --button-background-color-selected: transparent !important;
+    --button-background-color-ghost-selected: transparent !important;
+    --button-background-color-ghost-open: transparent !important;
+    --button-border-color: transparent !important;
+    --button-border-color-ghost: transparent !important;
+  }
+
+  /* ---- Extension cards: same background, outlined only ---- */
+  addon-card .card,
+  .card,
+  recommended-addon-card .card {
+    background: #121212 !important;
+    background-color: #121212 !important;
+    border: 1px solid #2A2A2A !important;
+    box-shadow: none !important;
+  }
+
+  addon-card .card:hover,
+  .card:hover {
+    border-color: #3A3A3A !important;
+  }
+
+}
+
+/* ---- Hide the vertical divider between the category list and content ---- */
+@-moz-document url-prefix("about:preferences"), url-prefix("about:addons") {
+
+  .navigation,
+  #sidebar,
+  #categories,
+  categories-box,
+  .sidebar-footer-list,
+  .main-content,
+  #main {
+    border-inline-start: none !important;
+    border-inline-end: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+  }
+
+  .navigation::before,
+  .navigation::after,
+  #sidebar::before,
+  #sidebar::after {
+    border: none !important;
+    background: transparent !important;
+  }
+}
+
+/* ---- Add-ons page: Firefox web components (moz-page-nav, moz-toggle) ----
+   Their colours live in custom properties set on the component itself,
+   so they have to be overridden on the component element, not on :root. */
+@-moz-document url-prefix("about:addons"), url-prefix("about:preferences") {
+
+  moz-page-nav,
+  moz-page-nav-button {
+    --page-nav-border-color: transparent !important;
+    /* the divider */
+    --page-nav-hr-background-color: #2A2A2A !important;
+    --page-nav-button-background-color: transparent !important;
+    --page-nav-button-background-color-hover: transparent !important;
+    --page-nav-button-background-color-active: transparent !important;
+    --page-nav-button-background-color-selected: transparent !important;
+    --page-nav-button-border-color: transparent !important;
+    --page-nav-button-border-color-hover: transparent !important;
+    --page-nav-button-border-color-active: transparent !important;
+    --page-nav-button-text-color: #E6E6E6 !important;
+    --page-nav-button-text-color-hover: #FFFFFF !important;
+    --page-nav-button-text-color-active: #FFFFFF !important;
+    --page-nav-button-text-color-selected: #DA752B !important;
+    --page-nav-button-indicator-background-color: #DA752B !important;
+    --border-color-selected: transparent !important;
+    --icon-color: #E6E6E6 !important;
+  }
+
+  moz-page-nav-button[selected] {
+    --icon-color: #DA752B !important;
+  }
+
+  moz-toggle {
+    --color-accent-primary: #DA752B !important;
+    --color-accent-primary-hover: #E8934F !important;
+    --color-accent-primary-active: #B35F20 !important;
+    --toggle-background-color: #2A2A2A !important;
+    --toggle-background-color-hover: #333333 !important;
+    --toggle-background-color-active: #2A2A2A !important;
+    --toggle-border-color: #555555 !important;
+    --toggle-dot-background-color: #8C8C8C !important;
+    --toggle-background-color-pressed: #DA752B !important;
+    --toggle-background-color-pressed-hover: #E8934F !important;
+    --toggle-background-color-pressed-active: #B35F20 !important;
+    --toggle-dot-background-color-on-pressed: #121212 !important;
+  }
+
+  /* Extension names: normal text colour, not link blue */
+  .addon-name-link,
+  .addon-name-link:hover {
+    color: #E6E6E6 !important;
+  }
+}
+
+/* ---- Add-ons header: centre the title vertically on the gear button ---- */
+@-moz-document url-prefix("about:addons") {
+  .main-heading {
+    align-items: center !important;
+  }
+
+  .main-heading .header-name,
+  .main-heading h1 {
+    margin-block: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .main-heading .page-options-menu {
+    align-self: center !important;
+    margin-block: 0 !important;
+  }
+}
+
+/* "…" button while its menu is open: keep it transparent, show the orange
+   rounded border instead (the menu-open state is not :hover) */
+@-moz-document url-prefix("about:addons") {
+
+  moz-button.more-options-button[type="ghost"]:is([open], [selected], [aria-expanded="true"]),
+  addon-card[panelopen] moz-button.more-options-button[type="ghost"] {
+    --button-background-color: transparent !important;
+    --button-border-color: #DA752B !important;
+  }
+}
+
+/* =================================================================
+   about:processes
+   ================================================================= */
+@-moz-document url-prefix("about:processes") {
+  :root {
+    --background-color-canvas: #121212 !important;
+    --background-color-box: #121212 !important;
+    --border-color: #2A2A2A !important;
+    --button-background-color: #121212 !important;
+    --button-text-color: #8C8C8C !important;
+    --button-background-color-hover: #1D1D1D !important;
+    --button-text-color-hover: #E6E6E6 !important;
+    --button-background-color-active: #222222 !important;
+    --button-text-color-active: #E6E6E6 !important;
+    --background-color-list-item-hover: transparent !important;
+    --text-color-list-item-hover: #FFFFFF !important;
+    --color-accent-primary: #DA752B !important;
+    --color-accent-primary-selected: transparent !important;
+    --text-color-accent-primary-selected: #E6E6E6 !important;
+    --focus-outline-color: #DA752B !important;
+    --text-color: #E6E6E6 !important;
+  }
+
+  html,
+  body,
+  #process-table,
+  #process-thead,
+  #process-tbody {
+    background-color: #121212 !important;
+    color: #E6E6E6 !important;
+  }
+
+  #process-thead {
+    border-bottom: 1px solid #2A2A2A !important;
+  }
+
+  /* ---- Alignment ---- */
+  /* Every cell: text vertically centred in its 2em row */
+  th,
+  td {
+    display: flex !important;
+    align-items: center !important;
+    padding-block: 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Numbers and their headings share the same right edge */
+  td.memory,
+  td.cpu {
+    justify-content: flex-end !important;
+  }
+
+  th:nth-child(2),
+  th:nth-child(3) {
+    justify-content: flex-end !important;
+  }
+
+  th.clickable-header>button.clickable {
+    height: 100% !important;
+    padding-block: 0 !important;
+    padding-inline: 10px !important;
+    color: #8C8C8C !important;
+  }
+
+  th:nth-child(2)>button.clickable,
+  th:nth-child(3)>button.clickable {
+    text-align: end !important;
+    background-position: left 6px center !important;
+    /* sort arrow on the left */
+  }
+
+  th:first-child>button.clickable {
+    padding-inline-start: 38px !important;
+    /* line up with process names */
+  }
+
+  th>button.clickable:hover {
+    color: #E6E6E6 !important;
+  }
+
+  th>button.clickable:is(.arrow-up, .arrow-down) {
+    color: #DA752B !important;
+  }
+
+  th:not(:first-child) {
+    border-image: linear-gradient(transparent 25%, #2A2A2A 25%, #2A2A2A 75%, transparent 75%) 1 1 !important;
+  }
+
+  /* Settings cog in the last column: centred */
+  #column-kill {
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  /* ---- Rows ---- */
+  tr.separate-from-previous-process-group {
+    border-top: 1px dotted #2A2A2A !important;
+  }
+
+  /* Hover and selection: no fill, only an outline */
+  #process-tbody>tr {
+    border-radius: 6px !important;
+  }
+
+  #process-tbody>tr:hover {
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 1px #333333 !important;
+  }
+
+  tr[selected],
+  tr[selected]>td {
+    background-color: transparent !important;
+    color: #E6E6E6 !important;
+  }
+
+  tr[selected] {
+    box-shadow: inset 0 0 0 1px #DA752B !important;
+  }
+
+  tr.thread,
+  tr.thread-summary,
+  tr.window {
+    color: #B0B0B0 !important;
+  }
+
+  /* CPU bar: soft orange instead of blue */
+  .cpu {
+    --bar-color: rgba(218, 117, 43, 0.35) !important;
+  }
+
+  /* Row action icons */
+  .close-icon:hover,
+  .unload-icon:hover,
+  .go-to-tab-icon:hover,
+  .profiler-icon:hover {
+    background-color: transparent !important;
+    color: #DA752B !important;
+  }
+
+  .profiler-active {
+    fill: #DA752B !important;
+  }
+}

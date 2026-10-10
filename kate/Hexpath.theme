@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "name": "Hexpath",
+    "revision": 1,
+    "license": "MIT",
+    "copyright": [
+      "Hexpath palette"
+    ]
+  },
+  "editor-colors": {
+    "BackgroundColor": "#191919",
+    "CodeFolding": "#2A2218",
+    "BracketMatching": "#3A3A3A",
+    "CurrentLine": "#202020",
+    "IconBorder": "#191919",
+    "IndentationLine": "#2E2E2E",
+    "LineNumbers": "#555555",
+    "CurrentLineNumber": "#DA752B",
+    "MarkBookmark": "#5ABAED",
+    "MarkBreakpointActive": "#E5534B",
+    "MarkBreakpointReached": "#D9A849",
+    "MarkBreakpointDisabled": "#C98BDB",
+    "MarkExecution": "#8C8C8C",
+    "MarkWarning": "#D9A849",
+    "MarkError": "#E5534B",
+    "ModifiedLines": "#D9A849",
+    "ReplaceHighlight": "#2E4A1E",
+    "SavedLines": "#54D33A",
+    "SearchHighlight": "#5A4A1E",
+    "TextSelection": "#4A3320",
+    "Separator": "#2E2E2E",
+    "SpellChecking": "#E5534B",
+    "TabMarker": "#333333",
+    "TemplateBackground": "#222222",
+    "TemplatePlaceholder": "#2A2A2A",
+    "TemplateFocusedPlaceholder": "#3A2A1C",
+    "TemplateReadOnlyPlaceholder": "#262626",
+    "WordWrapMarker": "#2E2E2E"
+  },
+  "text-styles": {
+    "Normal": {
+      "text-color": "#E6E6E6",
+      "selected-text-color": "#E6E6E6"
+    },
+    "Keyword": {
+      "text-color": "#DA752B",
+      "selected-text-color": "#DA752B",
+      "bold": true
+    },
+    "Function": {
+      "text-color": "#5ABAED",
+      "selected-text-color": "#5ABAED"
+    },
+    "Variable": {
+      "text-color": "#C2B94C",
+      "selected-text-color": "#C2B94C"
+    },
+    "ControlFlow": {
+      "text-color": "#DA752B",
+      "selected-text-color": "#DA752B",
+      "bold": true
+    },
+    "Operator": {
+      "text-color": "#E8934F",
+      "selected-text-color": "#E8934F"
+    },
+    "BuiltIn": {
+      "text-color": "#47C4B4",
+      "selected-text-color": "#47C4B4"
+    },
+    "Extension": {
+      "text-color": "#51BFCE",
+      "selected-text-color": "#51BFCE",
+      "bold": true
+    },
+    "Preprocessor": {
+      "text-color": "#C2B94C",
+      "selected-text-color": "#C2B94C"
+    },
+    "Attribute": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849"
+    },
+    "Char": {
+      "text-color": "#37D075",
+      "selected-text-color": "#37D075"
+    },
+    "SpecialChar": {
+      "text-color": "#54D33A",
+      "selected-text-color": "#54D33A"
+    },
+    "String": {
+      "text-color": "#81CA3A",
+      "selected-text-color": "#81CA3A"
+    },
+    "VerbatimString": {
+      "text-color": "#81CA3A",
+      "selected-text-color": "#81CA3A"
+    },
+    "SpecialString": {
+      "text-color": "#37D075",
+      "selected-text-color": "#37D075"
+    },
+    "Import": {
+      "text-color": "#37D075",
+      "selected-text-color": "#37D075"
+    },
+    "DataType": {
+      "text-color": "#51BFCE",
+      "selected-text-color": "#51BFCE"
+    },
+    "DecVal": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849"
+    },
+    "BaseN": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849"
+    },
+    "Float": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849"
+    },
+    "Constant": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849",
+      "bold": true
+    },
+    "Comment": {
+      "text-color": "#7A7A7A",
+      "selected-text-color": "#7A7A7A",
+      "italic": true
+    },
+    "Documentation": {
+      "text-color": "#8C8C8C",
+      "selected-text-color": "#8C8C8C",
+      "italic": true
+    },
+    "Annotation": {
+      "text-color": "#93C53E",
+      "selected-text-color": "#93C53E"
+    },
+    "CommentVar": {
+      "text-color": "#47C4B4",
+      "selected-text-color": "#47C4B4",
+      "italic": true
+    },
+    "RegionMarker": {
+      "text-color": "#5ABAED",
+      "selected-text-color": "#5ABAED",
+      "background-color": "#1E2830"
+    },
+    "Information": {
+      "text-color": "#5ABAED",
+      "selected-text-color": "#5ABAED"
+    },
+    "Warning": {
+      "text-color": "#D9A849",
+      "selected-text-color": "#D9A849"
+    },
+    "Alert": {
+      "text-color": "#E5534B",
+      "selected-text-color": "#E5534B",
+      "bold": true,
+      "background-color": "#2E1A18"
+    },
+    "Error": {
+      "text-color": "#E5534B",
+      "selected-text-color": "#E5534B",
+      "underline": true
+    },
+    "Others": {
+      "text-color": "#54D33A",
+      "selected-text-color": "#54D33A"
+    }
+  }
+}

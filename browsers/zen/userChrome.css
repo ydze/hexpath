@@ -1,0 +1,184 @@
+/* Hexpath for Zen Browser: userChrome.css (browser UI) */
+
+:root {
+  /* Surfaces */
+  --zen-main-browser-background: #121212 !important;
+  --zen-themed-toolbar-bg: #121212 !important;
+  --toolbox-bgcolor-inactive: #121212 !important;
+  --zen-colors-tertiary: #191919 !important;
+  --zen-colors-primary: #222222 !important;
+  --zen-colors-secondary: #2A2A2A !important;
+  --zen-colors-border: #333333 !important;
+  --toolbar-bgcolor: #222222 !important;
+  --arrowpanel-background: #191919 !important;
+  --lwt-sidebar-background-color: #121212 !important;
+  --newtab-background-color: #191919 !important;
+
+  /* Accent */
+  --zen-primary-color: #DA752B !important;
+  --toolbarbutton-icon-fill: #C8C8C8 !important;
+
+  /* Text */
+  --lwt-text-color: #E6E6E6 !important;
+  --toolbar-color: #E6E6E6 !important;
+  --toolbar-field-color: #E6E6E6 !important;
+  --toolbar-field-focus-color: #E6E6E6 !important;
+  --tab-selected-textcolor: #E8934F !important;
+  --arrowpanel-color: #E6E6E6 !important;
+  --sidebar-text-color: #E6E6E6 !important;
+  --lwt-sidebar-text-color: #E6E6E6 !important;
+  --newtab-text-primary-color: #E6E6E6 !important;
+}
+
+hbox#titlebar,
+#TabsToolbar,
+#zen-appcontent-navbar-container {
+  background-color: #121212 !important;
+}
+
+.urlbar-background {
+  background-color: #222222 !important;
+}
+
+.urlbarView-url {
+  color: #5ABAED !important;
+}
+
+.sidebar-placesTree {
+  background-color: #121212 !important;
+}
+
+#zen-workspaces-button {
+  background-color: transparent !important;
+}
+
+#zenEditBookmarkPanelFaviconContainer {
+  background: #121212 !important;
+}
+
+.content-shortcuts {
+  background-color: #191919 !important;
+  border-color: #333333 !important;
+}
+
+#permissions-granted-icon {
+  color: #DA752B !important;
+}
+
+#zen-media-controls-toolbar #zen-media-progress-bar::-moz-range-track {
+  background: #333333 !important;
+}
+
+/* Active / open toolbar buttons get the orange accent */
+toolbar .toolbarbutton-1:not([disabled]):is([open], [checked])> :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+  fill: #DA752B !important;
+}
+
+/* Container tab colors from the Hexpath palette */
+.identity-color-blue {
+  --identity-tab-color: #5ABAED !important;
+  --identity-icon-color: #5ABAED !important;
+}
+
+.identity-color-turquoise {
+  --identity-tab-color: #47C4B4 !important;
+  --identity-icon-color: #47C4B4 !important;
+}
+
+.identity-color-green {
+  --identity-tab-color: #54D33A !important;
+  --identity-icon-color: #54D33A !important;
+}
+
+.identity-color-yellow {
+  --identity-tab-color: #D9A849 !important;
+  --identity-icon-color: #D9A849 !important;
+}
+
+.identity-color-orange {
+  --identity-tab-color: #DA752B !important;
+  --identity-icon-color: #DA752B !important;
+}
+
+.identity-color-red {
+  --identity-tab-color: #E5534B !important;
+  --identity-icon-color: #E5534B !important;
+}
+
+.identity-color-pink {
+  --identity-tab-color: #DDB0EA !important;
+  --identity-icon-color: #DDB0EA !important;
+}
+
+.identity-color-purple {
+  --identity-tab-color: #C98BDB !important;
+  --identity-icon-color: #C98BDB !important;
+}
+
+/* ---------------------------------------------------------------
+   Frame: make everything around the web page the same #121212
+   (removes Zen's darker gap / workspace gradient / grain)
+   --------------------------------------------------------------- */
+:root {
+  --zen-main-browser-background-toolbar: #121212 !important;
+  --zen-themed-toolbar-bg-transparent: #121212 !important;
+}
+
+#zen-main-app-wrapper,
+#browser,
+#navigator-toolbox,
+#zen-browser-background,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+#zen-tabbox-wrapper,
+#zen-sidebar-splitter {
+  background: #121212 !important;
+  background-image: none !important;
+}
+
+#zen-browser-background::before,
+#zen-browser-background::after {
+  display: none !important;
+  /* workspace gradient + grain layers */
+}
+
+/* ---------------------------------------------------------------
+   Tabs + Essentials: background always equals the sidebar.
+   State is shown ONLY by the border colour.
+   --------------------------------------------------------------- */
+:root {
+  --tab-selected-bgcolor: #121212 !important;
+  --tab-hover-background-color: #121212 !important;
+  --tab-selected-shadow: none !important;
+}
+
+.tabbrowser-tab .tab-background {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1.5px solid transparent !important;
+}
+
+.tabbrowser-tab .tab-background::before,
+.tabbrowser-tab .tab-background::after {
+  display: none !important;
+  /* favicon-colour glow on essentials */
+}
+
+/* Essentials keep a quiet outline so they still read as tiles */
+.tabbrowser-tab[zen-essential] .tab-background {
+  border-color: #2A2A2A !important;
+}
+
+/* Hover: slightly lighter border, same background */
+.tabbrowser-tab:hover .tab-background {
+  border-color: #3A3A3A !important;
+}
+
+/* Selected / focused: orange border, same background */
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background,
+.tabbrowser-tab:focus-visible .tab-background {
+  border-color: #DA752B !important;
+}

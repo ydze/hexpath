@@ -1,0 +1,358 @@
+/* ==UserStyle==
+@name           Hexpath · Google Translate
+@namespace      hexpath
+@version        2.3.11
+@description    Hexpath desktop palette for translate.google.com, with bright, readable text
+@author         Hexpath
+@license        MIT
+@preprocessor   default
+==/UserStyle== */
+
+@-moz-document domain("translate.google.com") {
+
+  /* 1. Google's own colour tokens -> Hexpath */
+  html,
+  body,
+  body * {
+    --gm3-sys-color-background: #222222 !important;
+    --gm3-sys-color-surface: #222222 !important;
+    --gm3-sys-color-surface-dim: #191919 !important;
+    --gm3-sys-color-surface-bright: #2A2A2A !important;
+    --gm3-sys-color-surface-container-lowest: #191919 !important;
+    --gm3-sys-color-surface-container-low: #191919 !important;
+    --gm3-sys-color-surface-container: #191919 !important;
+    --gm3-sys-color-surface-container-high: #2A2A2A !important;
+    --gm3-sys-color-surface-container-highest: #333333 !important;
+    --gm3-sys-color-surface-variant: #2A2A2A !important;
+    --gm3-sys-color-on-background: #F0F0F0 !important;
+    --gm3-sys-color-on-surface: #F0F0F0 !important;
+    --gm3-sys-color-on-surface-variant: #B8B8B8 !important;
+    --gm3-sys-color-outline: #3A3A3A !important;
+    --gm3-sys-color-outline-variant: #2A2A2A !important;
+    --gm3-sys-color-primary: #DA752B !important;
+    --gm3-sys-color-on-primary: #121212 !important;
+    --gm3-sys-color-primary-container: #2A2A2A !important;
+    --gm3-sys-color-on-primary-container: #DA752B !important;
+    --gm3-sys-color-secondary-container: #2A2A2A !important;
+    --gm3-sys-color-on-secondary-container: #DA752B !important;
+    --gm3-sys-color-error: #E5534B !important;
+
+    --md-sys-color-background: #222222 !important;
+    --md-sys-color-surface: #222222 !important;
+    --md-sys-color-surface-container: #191919 !important;
+    --md-sys-color-surface-container-high: #2A2A2A !important;
+    --md-sys-color-on-surface: #F0F0F0 !important;
+    --md-sys-color-on-surface-variant: #B8B8B8 !important;
+    --md-sys-color-outline: #3A3A3A !important;
+    --md-sys-color-primary: #DA752B !important;
+    --md-sys-color-on-primary: #121212 !important;
+    --md-sys-color-primary-container: #2A2A2A !important;
+    --md-sys-color-on-primary-container: #DA752B !important;
+  }
+
+  /* 2. Page background */
+  html,
+  body,
+  header,
+  main {
+    background-color: #222222 !important;
+  }
+
+  /* 3. All text bright */
+  body,
+  body *:not(svg):not(path):not(img) {
+    color: #F0F0F0 !important;
+  }
+
+  /* 4. Icons follow the text colour, so they are just as bright */
+  button svg,
+  [role="button"] svg,
+  [role="tab"] svg,
+  [role="menuitem"] svg {
+    fill: currentColor !important;
+    color: currentColor !important;
+  }
+
+  /* 5. Secondary text: placeholders, disabled */
+  textarea::placeholder {
+    color: #B8B8B8 !important;
+  }
+
+  button[disabled],
+  button[aria-disabled="true"],
+  [role="button"][aria-disabled="true"] {
+    opacity: 1 !important;
+  }
+
+  /* Disabled buttons (e.g. mic) look the same as the other buttons */
+  button[disabled] *,
+  button[aria-disabled="true"] *,
+  [role="button"][aria-disabled="true"] * {
+    color: #F0F0F0 !important;
+    opacity: 1 !important;
+  }
+
+  /* 6. Accent: selected / active items in orange */
+  [aria-selected="true"],
+  [aria-selected="true"] *,
+  [aria-pressed="true"],
+  [aria-pressed="true"] *,
+  [aria-checked="true"],
+  [aria-checked="true"] *,
+  [aria-current="page"],
+  [aria-current="page"] * {
+    color: #DA752B !important;
+  }
+
+  button:hover,
+  button:hover *,
+  [role="button"]:hover,
+  [role="button"]:hover *,
+  [role="tab"]:hover,
+  [role="tab"]:hover * {
+    color: #E8934F !important;
+  }
+
+  /* 7. Typing */
+  textarea {
+    background: transparent !important;
+    caret-color: #DA752B !important;
+  }
+
+  ::selection {
+    background: #DA752B !important;
+    color: #121212 !important;
+  }
+
+  /* 8. Popups: language list, menus, dialogs */
+  [role="listbox"],
+  [role="menu"],
+  [role="dialog"] {
+    background-color: #191919 !important;
+    border: 1px solid #333333 !important;
+  }
+
+  [role="option"]:hover,
+  [role="menuitem"]:hover {
+    background-color: #2A2A2A !important;
+  }
+
+  /* 9. Links: only plain text links are blue. */
+  a[href]:not([role="button"]):not([role="tab"]):not(:has(svg, img)) {
+    color: #5ABAED !important;
+  }
+
+  /* 10. Focus (not on the text area itself; its panel gets the border) */
+  :focus-visible:not(textarea):not(input) {
+    outline: 1px solid #DA752B !important;
+    outline-offset: 1px !important;
+  }
+
+  textarea,
+  textarea:focus,
+  textarea:focus-visible,
+  input:focus,
+  input:focus-visible {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 10b. Source text panel: accent border. */
+  div:has(textarea),
+  span:has(textarea) {
+    border-color: #DA752B !important;
+  }
+
+  /* 11. On-screen keyboard icon and its small drop-down arrow. */
+  [class*="ita-kd-img"],
+  [class*="ita-kd-icon"],
+  [class*="ita-kd-arrow"],
+  [class*="ita-kd-dropdown"],
+  [class*="ita-kd"] img,
+  [aria-label*="keyboard" i] img,
+  [aria-label*="input tools" i] img {
+    filter: brightness(0) invert(94%) !important;
+    opacity: 1 !important;
+  }
+
+  /* 12. Scrollbars */
+  * {
+    scrollbar-color: #3A3A3A #191919 !important;
+  }
+
+  /* 13. Selected-language underline: Hexpath orange instead of Google blue. */
+  [role="tablist"] :empty:not(img):not(svg):not(path):not(input) {
+    filter: brightness(0) saturate(100%) invert(71%) sepia(34%) saturate(6373%) hue-rotate(342deg) brightness(90%) contrast(89%) !important;
+  }
+
+  /* 14. Dialogs (e.g. Settings > Voice speed) */
+  html,
+  body,
+  body * {
+    --mdc-dialog-container-color: #191919 !important;
+    --gm3-dialog-container-color: #191919 !important;
+    --mdc-theme-surface: #191919 !important;
+  }
+
+  [role="dialog"],
+  [role="dialog"]>*,
+  [role="dialog"]>*>*,
+  [aria-modal="true"],
+  [aria-modal="true"]>*,
+  [aria-modal="true"]>*>*,
+  [role="dialog"] [class*="surface" i] {
+    background-color: #191919 !important;
+  }
+
+  [role="dialog"] [class*="surface" i],
+  [aria-modal="true"]>* {
+    border-radius: 12px;
+  }
+
+  /* Radio buttons: unselected grey ring, selected orange ring + dot */
+  *:has(> input[type="radio"])>*,
+  *:has(> input[type="radio"])>*>* {
+    border-color: #B8B8B8 !important;
+  }
+
+  *:has(> input[type="radio"]:checked)>*,
+  *:has(> input[type="radio"]:checked)>*>*,
+  [role="radio"][aria-checked="true"] * {
+    border-color: #DA752B !important;
+  }
+
+  input[type="radio"] {
+    accent-color: #DA752B !important;
+  }
+
+  /* 15. Virtual keyboard (Google Input Tools, classes "vk-*") */
+
+  /* Outer panel: the only element with a border and shadow */
+  .vk-box,
+  [class~="vk-box"] {
+    background-color: #191919 !important;
+    background-image: none !important;
+    border: 1px solid #3A3A3A !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Everything inside (title bar, rows, wrappers): flat, no shadow, no own background, so the panel is a single colour */
+  [class*="vk-box"] *:not([class*="vk-btn"]) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-color: transparent;
+  }
+
+  /* Font: monospace on the key labels only. The close button and key icons use Google's own icon font, so they are left alone. */
+  [class*="vk-btn"],
+  [class*="vk-btn"] [class*="vk-cap"],
+  [class*="vk-box"] [class*="vk-t"],
+  [class*="vk-box"] [class*="vk-t"]>span {
+    font-family: "JetBrains Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", "Liberation Mono", monospace !important;
+  }
+
+  /* Keys */
+  [class*="vk-btn"] {
+    background-color: #2A2A2A !important;
+    background-image: none !important;
+    border: 1px solid #3A3A3A !important;
+    box-shadow: none !important;
+    color: #F0F0F0 !important;
+  }
+
+  [class*="vk-btn"]:hover {
+    background-color: #333333 !important;
+    border-color: #DA752B !important;
+  }
+
+  [class*="vk-btn"]:active,
+  [class*="vk-btn"][class*="vk-sf-a"],
+  [class*="vk-btn"][class*="-sel"],
+  [class*="vk-btn"][class*="-pressed"] {
+    background-color: #DA752B !important;
+    border-color: #DA752B !important;
+    color: #121212 !important;
+  }
+
+  [class*="vk-box"] span,
+  [class*="vk-box"] div {
+    color: #F0F0F0 !important;
+  }
+
+  /* Key icons (backspace, Shift, Caps) drawn as dark images */
+  [class*="vk-btn"] :empty,
+  [class*="vk-box"] img {
+    filter: brightness(0) invert(94%) !important;
+    opacity: 1 !important;
+  }
+
+  /* Close button: Google's pixel image hidden, crisp vector × drawn in the text colour, orange on hover */
+  [class*="vk-box"] [class*="vk-sf-cl"] {
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    color: #F0F0F0 !important;
+    font-size: 0 !important;
+  }
+
+  [class*="vk-box"] [class*="vk-sf-cl"]>* {
+    display: none !important;
+  }
+
+  [class*="vk-box"] [class*="vk-sf-cl"]::after {
+    content: "" !important;
+    display: block !important;
+    width: 17px !important;
+    height: 17px !important;
+    background-color: currentColor !important;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  }
+
+  [class*="vk-box"] [class*="vk-sf-cl"]:hover {
+    color: #DA752B !important;
+  }
+
+  /* 15b. Special keys: K8 Backspace, K16 Shift, K20 Caps Lock. */
+  [class*="vk-box"] :is(#K8, #K16, #K20)> :empty {
+    display: none !important;
+  }
+
+  [class*="vk-box"] :is(#K8, #K16, #K20)::after {
+    content: "" !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: 17px !important;
+    height: 17px !important;
+    background-color: currentColor !important;
+  }
+
+  [class*="vk-box"] #K8::after {
+    width: 19px !important;
+    height: 19px !important;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M8 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-6-7z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M11 9l6 6M17 9l-6 6'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  }
+
+  [class*="vk-box"] #K16::after {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M12 3.5 3.5 12.5H8V20h8v-7.5h4.5z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  }
+
+  [class*="vk-box"] #K20::after {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M12 2.5 4 10.5h4V15h8v-4.5h4z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round' d='M8 20h8'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  }
+
+  /* 15c. Ctrl + Alt keys */
+  [class*="vk-box"] :is(#K17, #K18, #K273, #K274),
+  [class*="vk-box"] :is(#K17, #K18, #K273, #K274) * {
+    font-size: 0.9em !important;
+  }
+}
